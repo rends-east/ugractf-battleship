@@ -24,6 +24,7 @@
 6)PROFIT
 
 '''python
+
 import requests as rq
 import math
 
