@@ -27,7 +27,6 @@
 
 import requests as rq
 import math
-
 def get_intercetions(x0, y0, r0, x1, y1, r1):
     d=math.sqrt((x1-x0)**2 + (y1-y0)**2)
     if d > r0 + r1 :
@@ -45,16 +44,13 @@ def get_intercetions(x0, y0, r0, x1, y1, r1):
         y3=y2-h*(x1-x0)/d
         x4=x2-h*(y1-y0)/d
         y4=y2+h*(x1-x0)/d
-
         d = rq.post("https://battleship.q.2021.ugractf.ru/b6afef3a9019c9a3/fire", data={'x': str(x3), 'y': str(y3)},
                     cookies=r.cookies)
         print(d.text)
         d = rq.post("https://battleship.q.2021.ugractf.ru/b6afef3a9019c9a3/fire", data={'x': str(x4), 'y': str(y4)},
                     cookies=r.cookies)
         print(d.text)
-
         return (x3, y3, x4, y4)
-
 r = rq.post("https://battleship.q.2021.ugractf.ru/b6afef3a9019c9a3/reset")
 print(r.text)
 r = rq.post("https://battleship.q.2021.ugractf.ru/b6afef3a9019c9a3/fire", data={'x': 0, 'y': 0}, cookies=r.cookies)
