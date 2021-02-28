@@ -23,7 +23,7 @@
 5)????
 6)PROFIT
 
-'''python
+```python
 
 import requests as rq
 import math
@@ -62,5 +62,5 @@ jsonResponse = r.json()
 r2 = float(jsonResponse["distance"])
 print(r.text)
 print(get_intercetions(0, 0, r1, 400, 0, r2))
-'''
+```
 
